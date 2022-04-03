@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Advanced Selector | Dropdown menu</title>
+    <style>
+      body {
+        background-color: black;
+        font-family: Helvetica;
+        margin: 0;
+      }
+      .found {
+        width: 50%;
+      }
+      nav {
+        background-color: #1f1f14;
+        padding: 10%;
+        margin: 10%;
+      }
+      #menu {
+        background-color: rgb(204, 201, 201);
+        color: black;
+        border-radius: 10px;
+        margin: 25% 25% 0 25%;
+        font-family: arial;
+        display: block;
+        padding: 20px;
+        width: 50%;
+        box-shadow: 0 0 10px 0 gray;
+      }
+      .menu_list {
+        width: 53%;
+        list-style: none;
+        margin: -15px 25% 25% 25%;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+        background-color: aliceblue;
+        padding: 10px;
+        display: block;
+        width: 88%;
+        border-bottom: 1px solid gray;
+      }
+
+      a:hover {
+        background-color: rgb(212, 210, 210);
+      }
+      a::before {
+        padding-right: 100px;
+      }
+      nav label {
+        cursor: pointer;
+        user-select: none;
+      }
+      nav label::after {
+        content: "▼";
+        padding-left: 125px;
+      }
+      nav ul {
+        display: none;
+      }
+      nav input {
+        display: none;
+      }
+      nav input:checked + label + ul {
+        display: block;
+      }
+      nav input:checked + label::after {
+        content: "▲";
+      }
+    </style>
+  </head>
+  <body>
+    <table class="found">
+      <nav>
+        <input type="checkbox" id="toggler" />
+        <label id="menu" for="toggler"> Dropdown </label>
+        <ul>
+          <div class="menu_list">
+            <li><a href="">Item 1</a></li>
+            <li><a href="">Item 2</a></li>
+            <li><a href="">Item 3</a></li>
+          </div>
+        </ul>
+      </nav>
+    </table>
+  </body>
+</html>
